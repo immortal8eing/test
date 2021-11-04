@@ -55,6 +55,7 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
+<<<<<<< HEAD
   <div class="content-wrapper">
     <section class="content">
       <div class="container-fluid">
@@ -62,6 +63,9 @@
       </div>
     </section>
   </div>
+=======
+  @yield('content')
+>>>>>>> f1c93730f5b6c5bfe36ac37a44c5a117843cffb5
   <!-- /.content-wrapper -->
   @include('adminapp.footer')
 
