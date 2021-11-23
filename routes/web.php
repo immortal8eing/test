@@ -1,14 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-<<<<<<< HEAD
-// use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProdukController;
-
-
-=======
->>>>>>> f1c93730f5b6c5bfe36ac37a44c5a117843cffb5
+use App\Http\Controllers\deleteController;
+use App\Http\Controllers\viewController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,31 +18,22 @@ use App\Http\Controllers\ProdukController;
 */
 
 Route::get('/', function () {
-<<<<<<< HEAD
     return view('welcome');
-=======
-    return view('index');
->>>>>>> f1c93730f5b6c5bfe36ac37a44c5a117843cffb5
 });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
-<<<<<<< HEAD
-
-
 Route::get('/table', function () {
     return view('table');
 });
+Route::get('produk', [ProdukController::class, 'index'])->name('getProduk');
 
-// Route::get( 'dashboard', [DashboardController::class, 'index'] );
+Route::get('/produk/delete/{id}', [ProdukController::class, 'destroy'])->name('produkDelete');
 
-Route::get( 'produk', [ProdukController::class, 'index'] );
-Route::get( '/produk/delete/{id}', [ProdukController::class, 'destroy'] )->name ('produkDelete');
+//customer
+Route::get('customer', [viewController::class, 'index'])->name('getCustomers');
+Route::get('/customer/delete/{id}', [viewController::class, 'destroy'])->name('customerDelete');
 
-
-=======
-Route::get('/table', function () {
-    return view('table');
-});
->>>>>>> f1c93730f5b6c5bfe36ac37a44c5a117843cffb5
+Route::get('categories', [deleteController::class, 'index'])->name('getCategories');
+Route::get('/categories/delete/{id}', [deleteController::class, 'destroy'])->name('categoriesDelete');
